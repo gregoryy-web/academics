@@ -1,0 +1,268 @@
+:root {
+    --bg: #eef1ec;
+    --panel: #fff;
+    --ink: #1d2b2a;
+    --mute: #66736f;
+    --line: #d9dfd8;
+    --brand: #14594f;
+    --brand-d: #0e4038;
+    --warn: #b3361f;
+    --ok: #2d6a3a
+}
+
+* {
+    box-sizing: border-box
+}
+
+body {
+    margin: 0;
+    font: 15px/1.5 "Segoe UI", system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    display: flex;
+    min-height: 100vh
+}
+
+aside {
+    width: 230px;
+    background: var(--brand-d);
+    color: #e5efe9;
+    padding: 24px 14px;
+    flex-shrink: 0
+}
+
+aside h1 {
+    font: 700 18px/1.25 Georgia, serif;
+    margin: 0 10px 22px
+}
+
+aside a {
+    display: block;
+    color: #bcd2c9;
+    text-decoration: none;
+    padding: 9px 12px;
+    border-radius: 6px;
+    margin-bottom: 2px
+}
+
+aside a:hover {
+    background: #17574d
+}
+
+aside a.on {
+    background: #f4f1e4;
+    color: var(--brand-d);
+    font-weight: 600
+}
+
+main {
+    flex: 1;
+    padding: 28px 32px;
+    min-width: 0
+}
+
+.bar {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 18px
+}
+
+.bar h2 {
+    font: 700 26px Georgia, serif;
+    margin: 0 auto 0 0
+}
+
+input,
+select {
+    font: inherit;
+    padding: 8px 10px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: #fff;
+    color: var(--ink);
+    width: 100%
+}
+
+.bar input {
+    width: 220px
+}
+
+input:focus,
+select:focus,
+button:focus-visible {
+    outline: 2px solid var(--brand);
+    outline-offset: 1px
+}
+
+button {
+    font: inherit;
+    cursor: pointer;
+    border: 1px solid var(--line);
+    background: #fff;
+    padding: 7px 14px;
+    border-radius: 6px;
+    color: var(--ink)
+}
+
+button.pri {
+    background: var(--brand);
+    border-color: var(--brand);
+    color: #fff;
+    font-weight: 600
+}
+
+button.pri:hover {
+    background: var(--brand-d)
+}
+
+button.del {
+    color: var(--warn);
+    border-color: #e6c3bb
+}
+
+button:disabled {
+    opacity: .45;
+    cursor: not-allowed
+}
+
+.box {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    overflow: auto
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%
+}
+
+th,
+td {
+    text-align: left;
+    padding: 11px 14px;
+    border-bottom: 1px solid var(--line);
+    white-space: nowrap
+}
+
+th {
+    background: #f6f8f4;
+    font-weight: 600;
+    color: var(--mute);
+    font-size: 13px
+}
+
+tr:last-child td {
+    border-bottom: 0
+}
+
+td.act {
+    text-align: right;
+    width: 1%
+}
+
+td.act form {
+    display: inline
+}
+
+.empty {
+    padding: 40px;
+    text-align: center;
+    color: var(--mute)
+}
+
+.note {
+    padding: 10px 14px;
+    border-radius: 6px;
+    margin-bottom: 14px
+}
+
+.note.ok {
+    background: #e1f0e4;
+    color: var(--ok)
+}
+
+.note.er {
+    background: #f9e3de;
+    color: var(--warn)
+}
+
+dialog {
+    border: 0;
+    border-radius: 10px;
+    padding: 0;
+    width: min(440px, 92vw);
+    box-shadow: 0 20px 60px #0004
+}
+
+dialog::backdrop {
+    background: #10211e88
+}
+
+dialog form {
+    padding: 24px
+}
+
+dialog h3 {
+    margin: 0 0 16px;
+    font: 700 20px Georgia, serif
+}
+
+label {
+    display: block;
+    font-size: 13px;
+    color: var(--mute);
+    margin: 12px 0 4px
+}
+
+.foot {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 22px
+}
+
+.datewrap {
+    position: relative;
+    display: flex;
+    gap: 6px
+}
+
+.datewrap .cal {
+    padding: 6px 10px
+}
+
+.hidepick {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none
+}
+
+@media (max-width:720px) {
+    body {
+        flex-direction: column
+    }
+
+    aside {
+        width: auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+        padding: 12px
+    }
+
+    aside h1 {
+        width: 100%;
+        margin: 0 0 6px
+    }
+
+    main {
+        padding: 18px
+    }
+}
